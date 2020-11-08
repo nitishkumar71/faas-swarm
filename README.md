@@ -1,7 +1,7 @@
 faas-swarm
 ==========
 
-[![Build Status](https://travis-ci.com/openfaas/faas-swarm.svg?branch=master)](https://travis-ci.com/openfaas/faas-swarm)
+[![Build Status](https://github.com/openfaas/faas-swarm/workflows/build/badge.svg?branch=master)](https://github.com/openfaas/faas-swarm/actions)
 
 ## Summary
 
@@ -26,7 +26,7 @@ Features:
 * [x] List
 * [x] Scale
 
-Docker image: [`openfaas/faas-swarm`](https://hub.docker.com/r/openfaas/faas-swarm/tags/)
+Docker image: [`openfaas/faas-swarm`](https://github.com/orgs/openfaas/packages/container/package/faas-swarm)
 
 ## Contributing
 
