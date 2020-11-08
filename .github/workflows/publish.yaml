@@ -60,9 +60,9 @@ jobs:
             $DOCKER_NS/faas-swarm:${{ github.sha }}
             $DOCKER_NS/faas-swarm:${{ steps.get_tag.outputs.TAG }}
             $DOCKER_NS/faas-swarm:latest
-            quay.io/openfaas/faas-netes:${{ github.sha }}
-            quay.io/openfaas/faas-netes:${{ steps.get_tag.outputs.TAG }}
-            quay.io/openfaas/faas-netes:latest
-            ghcr.io/openfaas/faas-netes:${{ github.sha }}
-            ghcr.io/openfaas/faas-netes:${{ steps.get_tag.outputs.TAG }}
-            ghcr.io/openfaas/faas-netes:latest
+            quay.io/$DOCKER_NS/faas-netes:${{ github.sha }}
+            quay.io/$DOCKER_NS/faas-netes:${{ steps.get_tag.outputs.TAG }}
+            quay.io/$DOCKER_NS/faas-netes:latest
+            ghcr.io/$DOCKER_NS/faas-netes:${{ github.sha }}
+            ghcr.io/$DOCKER_NS/faas-netes:${{ steps.get_tag.outputs.TAG }}
+            ghcr.io/$DOCKER_NS/faas-netes:latest
