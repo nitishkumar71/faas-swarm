@@ -27,9 +27,9 @@ jobs:
         run: echo ::set-output name=TAG::${GITHUB_REF#refs/tags/}
       - name: Set Namespace
         run: |
-          if [ -z ${{ DOCKER_NS }} ] ; then
+          if [[ -z $DOCKER_NS ]]; then
             export DOCKER_NS=openfaas;
-            fi
+          fi
           echo "DOCKER NS: ${{ DOCKER_NS }}"
       - name: Setup
         run: sh ./contrib/ci.sh
