@@ -56,12 +56,12 @@ jobs:
           outputs: "type=registry,push=true"
           platforms: linux/amd64,linux/armhf,linux/arm64
           tags: |
-            ${{ DOCKER_NS }}/faas-swarm:${{ github.sha }}
-            ${{ DOCKER_NS }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}
-            ${{ DOCKER_NS }}/faas-swarm:latest
-            quay.io/${{ DOCKER_NS }}/faas-netes:${{ github.sha }}
-            quay.io/${{ DOCKER_NS }}/faas-netes:${{ steps.get_tag.outputs.TAG }}
-            quay.io/${{ DOCKER_NS }}/faas-netes:latest
-            ghcr.io/${{ DOCKER_NS }}/faas-netes:${{ github.sha }}
-            ghcr.io/${{ DOCKER_NS }}/faas-netes:${{ steps.get_tag.outputs.TAG }}
-            ghcr.io/${{ DOCKER_NS }}/faas-netes:latest
+            $DOCKER_NS/faas-swarm:${{ github.sha }}
+            $DOCKER_NS/faas-swarm:${{ steps.get_tag.outputs.TAG }}
+            $DOCKER_NS/faas-swarm:latest
+            quay.io/$DOCKER_NS/faas-netes:${{ github.sha }}
+            quay.io/$DOCKER_NS/faas-netes:${{ steps.get_tag.outputs.TAG }}
+            quay.io/$DOCKER_NS/faas-netes:latest
+            ghcr.io/$DOCKER_NS/faas-netes:${{ github.sha }}
+            ghcr.io/$DOCKER_NS/faas-netes:${{ steps.get_tag.outputs.TAG }}
+            ghcr.io/$DOCKER_NS/faas-netes:latest
