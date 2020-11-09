@@ -25,8 +25,6 @@ jobs:
       - name: Get TAG
         id: get_tag
         run: echo ::set-output name=TAG::${GITHUB_REF#refs/tags/}
-      - name: Set Namespace
-        run: sh ./contrib/set_env_var.sh
       - name: Setup
         run: sh ./contrib/ci.sh
       - name: Run CI
