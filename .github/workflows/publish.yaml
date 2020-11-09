@@ -56,12 +56,12 @@ jobs:
           outputs: "type=registry,push=true"
           platforms: linux/amd64,linux/armhf,linux/arm64
           tags: |
-            $DOCKER_NS/faas-swarm:${{ github.sha }}
-            $DOCKER_NS/faas-swarm:${{ steps.get_tag.outputs.TAG }}
-            $DOCKER_NS/faas-swarm:latest
-            quay.io/$DOCKER_NS/faas-netes:${{ github.sha }}
-            quay.io/$DOCKER_NS/faas-netes:${{ steps.get_tag.outputs.TAG }}
-            quay.io/$DOCKER_NS/faas-netes:latest
-            ghcr.io/$DOCKER_NS/faas-netes:${{ github.sha }}
-            ghcr.io/$DOCKER_NS/faas-netes:${{ steps.get_tag.outputs.TAG }}
-            ghcr.io/$DOCKER_NS/faas-netes:latest
+            ${{ secrets.DOCKER_USERNAME }}/faas-swarm:${{ github.sha }}
+            ${{ secrets.DOCKER_USERNAME }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}
+            ${{ secrets.DOCKER_USERNAME }}/faas-swarm:latest
+            quay.io/${{ secrets.QUAY_USERNAME }}/faas-netes:${{ github.sha }}
+            quay.io/${{ secrets.QUAY_USERNAME }}/faas-netes:${{ steps.get_tag.outputs.TAG }}
+            quay.io/${{ secrets.QUAY_USERNAME }}/faas-netes:latest
+            ghcr.io/${{ secrets.GH_USERNAME }}/faas-netes:${{ github.sha }}
+            ghcr.io/${{ secrets.GH_USERNAME }}/faas-netes:${{ steps.get_tag.outputs.TAG }}
+            ghcr.io/${{ secrets.GH_USERNAME }}/faas-netes:latest
