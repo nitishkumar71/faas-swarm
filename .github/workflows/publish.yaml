@@ -26,11 +26,7 @@ jobs:
         id: get_tag
         run: echo ::set-output name=TAG::${GITHUB_REF#refs/tags/}
       - name: Set Namespace
-        run: |
-          if [[ -z $DOCKER_NS ]]; then
-            export DOCKER_NS=openfaas;
-          fi
-          echo "DOCKER NS: ${{ DOCKER_NS }}"
+        run: sh ./contrib/set_env_var.sh
       - name: Setup
         run: sh ./contrib/ci.sh
       - name: Run CI
