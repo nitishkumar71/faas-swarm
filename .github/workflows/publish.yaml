@@ -4,8 +4,6 @@ on:
   push:
     tags:
       - '*'
-env:
-  DOCKER_NS: nitishkumar71
 
 jobs:
   publish:
@@ -27,8 +25,6 @@ jobs:
         run: echo ::set-output name=TAG::${GITHUB_REF#refs/tags/}
       - name: Setup
         run: sh ./contrib/ci.sh
-      - name: Run CI
-        run: make
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       - name: Login to Docker Registry
@@ -54,12 +50,12 @@ jobs:
           outputs: "type=registry,push=true"
           platforms: linux/amd64,linux/armhf,linux/arm64
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/faas-swarm:${{ github.sha }}
+            # ${{ secrets.DOCKER_USERNAME }}/faas-swarm:${{ github.sha }}
             ${{ secrets.DOCKER_USERNAME }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}
             ${{ secrets.DOCKER_USERNAME }}/faas-swarm:latest
-            quay.io/${{ secrets.QUAY_USERNAME }}/faas-netes:${{ github.sha }}
+            # quay.io/${{ secrets.QUAY_USERNAME }}/faas-netes:${{ github.sha }}
             quay.io/${{ secrets.QUAY_USERNAME }}/faas-netes:${{ steps.get_tag.outputs.TAG }}
             quay.io/${{ secrets.QUAY_USERNAME }}/faas-netes:latest
-            ghcr.io/${{ secrets.GH_USERNAME }}/faas-netes:${{ github.sha }}
+            # ghcr.io/${{ secrets.GH_USERNAME }}/faas-netes:${{ github.sha }}
             ghcr.io/${{ secrets.GH_USERNAME }}/faas-netes:${{ steps.get_tag.outputs.TAG }}
             ghcr.io/${{ secrets.GH_USERNAME }}/faas-netes:latest
