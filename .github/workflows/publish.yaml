@@ -54,12 +54,15 @@ jobs:
             https_proxy=8443
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/faas-swarm:${{ github.sha }}
-            ${{ secrets.DOCKER_USERNAME }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}
-            ${{ secrets.DOCKER_USERNAME }}/faas-swarm:latest
-            ghcr.io/${{ secrets.GH_USERNAME }}/faas-netes:${{ github.sha }}
-            ghcr.io/${{ secrets.GH_USERNAME }}/faas-netes:${{ steps.get_tag.outputs.TAG }}
-            ghcr.io/${{ secrets.GH_USERNAME }}/faas-netes:latest
+            ${{ github.actor }}/faas-swarm:${{ github.sha }}
+            ${{ github.actor }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}
+            ${{ github.actor }}/faas-swarm:latest
+            quay.io/${{ github.actor }}/faas-swarm:${{ github.sha }}
+            quay.io/${{ github.actor }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}
+            quay.io/${{ github.actor }}/faas-swarm:latest
+            ghcr.io/${{ github.actor }}/faas-swarm:${{ github.sha }}
+            ghcr.io/${{ github.actor }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}
+            ghcr.io/${{ github.actor }}/faas-swarm:latest
       - name: Push containers arm64
         uses: docker/build-push-action@v2
         with:
@@ -70,12 +73,15 @@ jobs:
             https_proxy=8443
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/faas-swarm:${{ github.sha }}-arm64
-            ${{ secrets.DOCKER_USERNAME }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}-arm64
-            ${{ secrets.DOCKER_USERNAME }}/faas-swarm:latest-arm64
-            ghcr.io/${{ secrets.GH_USERNAME }}/faas-netes:${{ github.sha }}-arm64
-            ghcr.io/${{ secrets.GH_USERNAME }}/faas-netes:${{ steps.get_tag.outputs.TAG }}-arm64
-            ghcr.io/${{ secrets.GH_USERNAME }}/faas-netes:latest-arm64
+            ${{ github.actor }}/faas-swarm:${{ github.sha }}-arm64
+            ${{ github.actor }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}-arm64
+            ${{ github.actor }}/faas-swarm:latest-arm64
+            quay.io/${{ github.actor }}/faas-swarm:${{ github.sha }}-arm64
+            quay.io/${{ github.actor }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}-arm64
+            quay.io/${{ github.actor }}/faas-swarm:latest-arm64
+            ghcr.io/${{ github.actor }}/faas-swarm:${{ github.sha }}-arm64
+            ghcr.io/${{ github.actor }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}-arm64
+            ghcr.io/${{ github.actor }}/faas-swarm:latest-arm64
       - name: Push containers armhf
         uses: docker/build-push-action@v2
         with:
@@ -86,9 +92,12 @@ jobs:
             https_proxy=8443
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/faas-swarm:${{ github.sha }}-armhf
-            ${{ secrets.DOCKER_USERNAME }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}-armhf
-            ${{ secrets.DOCKER_USERNAME }}/faas-swarm:latest-armhf
-            ghcr.io/${{ secrets.GH_USERNAME }}/faas-netes:${{ github.sha }}-armhf
-            ghcr.io/${{ secrets.GH_USERNAME }}/faas-netes:${{ steps.get_tag.outputs.TAG }}-armhf
-            ghcr.io/${{ secrets.GH_USERNAME }}/faas-netes:latest-armhf
+            ${{ github.actor }}/faas-swarm:${{ github.sha }}-armhf
+            ${{ github.actor }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}-armhf
+            ${{ github.actor }}/faas-swarm:latest-armhf
+            quay.io/${{ github.actor }}/faas-swarm:${{ github.sha }}-armhf
+            quay.io/${{ github.actor }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}-armhf
+            quay.io/${{ github.actor }}/faas-swarm:latest-armhf
+            ghcr.io/${{ github.actor }}/faas-swarm:${{ github.sha }}-armhf
+            ghcr.io/${{ github.actor }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}-armhf
+            ghcr.io/${{ github.actor }}/faas-swarm:latest-armhf
