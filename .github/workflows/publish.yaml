@@ -25,9 +25,11 @@ jobs:
         run: echo ::set-output name=TAG::${GITHUB_REF#refs/tags/}
       - name: Get Quay Namespace
         id: get_quay_ns
+        env:
+          QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
         run: |
-          IFS='+' read -r -a array <<< "${{ secrets.QUAY_USERNAME }}"
-          echo ::set-output name=QUAY_NS::${array}
+          IFS='+' read -r -a array <<< "$QUAY_USERNAME"
+          echo ::set-output name=QUAY_NS::${array[0]}
       - name: Setup
         run: sh ./contrib/ci.sh
       - name: Set up Docker Buildx
