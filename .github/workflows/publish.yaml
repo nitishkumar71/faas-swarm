@@ -59,15 +59,15 @@ jobs:
             https_proxy=8443
           push: true
           tags: |
-            ${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:${{ github.sha }}
-            ${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}
-            ${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:latest
-            quay.io/${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:${{ github.sha }}
-            quay.io/${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}
-            quay.io/${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:latest
-            ghcr.io/${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:${{ github.sha }}
-            ghcr.io/${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}
-            ghcr.io/${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:latest
+            ${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:${{ github.sha }}
+            ${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}
+            ${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:latest
+            quay.io/${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:${{ github.sha }}
+            quay.io/${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}
+            quay.io/${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:latest
+            ghcr.io/${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:${{ github.sha }}
+            ghcr.io/${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}
+            ghcr.io/${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:latest
       - name: Push containers arm64
         uses: docker/build-push-action@v2
         with:
@@ -78,15 +78,15 @@ jobs:
             https_proxy=8443
           push: true
           tags: |
-            ${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:${{ github.sha }}-arm64
-            ${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}-arm64
-            ${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:latest-arm64
-            quay.io/${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:${{ github.sha }}-arm64
-            quay.io/${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}-arm64
-            quay.io/${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:latest-arm64
-            ghcr.io/${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:${{ github.sha }}-arm64
-            ghcr.io/${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}-arm64
-            ghcr.io/${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:latest-arm64
+            ${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:${{ github.sha }}-arm64
+            ${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}-arm64
+            ${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:latest-arm64
+            quay.io/${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:${{ github.sha }}-arm64
+            quay.io/${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}-arm64
+            quay.io/${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:latest-arm64
+            ghcr.io/${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:${{ github.sha }}-arm64
+            ghcr.io/${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}-arm64
+            ghcr.io/${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:latest-arm64
       - name: Push containers armhf
         uses: docker/build-push-action@v2
         with:
@@ -97,12 +97,12 @@ jobs:
             https_proxy=8443
           push: true
           tags: |
-            ${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:${{ github.sha }}-armhf
-            ${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}-armhf
-            ${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:latest-armhf
-            quay.io/${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:${{ github.sha }}-armhf
-            quay.io/${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}-armhf
-            quay.io/${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:latest-armhf
-            ghcr.io/${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:${{ github.sha }}-armhf
-            ghcr.io/${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}-armhf
-            ghcr.io/${{ steps.get_docker_ns.output.DOCKER_NS }}/faas-swarm:latest-armhf
+            ${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:${{ github.sha }}-armhf
+            ${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}-armhf
+            ${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:latest-armhf
+            quay.io/${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:${{ github.sha }}-armhf
+            quay.io/${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}-armhf
+            quay.io/${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:latest-armhf
+            ghcr.io/${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:${{ github.sha }}-armhf
+            ghcr.io/${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}-armhf
+            ghcr.io/${{ steps.get_docker_ns.outputs.DOCKER_NS }}/faas-swarm:latest-armhf
