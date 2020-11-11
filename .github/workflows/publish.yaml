@@ -25,7 +25,9 @@ jobs:
         run: echo ::set-output name=TAG::${GITHUB_REF#refs/tags/}
       - name: Set Docker Namespace
         id: get_docker_ns
-        run: echo ::set-output name=DOCKER_NS::${github.actor}
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+        run: echo ::set-output name=DOCKER_NS::${GITHUB_ACTOR}
       - name: Setup
         run: sh ./contrib/ci.sh
       - name: Set up Docker Buildx
