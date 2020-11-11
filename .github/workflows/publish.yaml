@@ -29,7 +29,6 @@ jobs:
         #   GITHUB_ACTOR: ${{ secrets.QUAY_USERNAME }}
         run: |
           IFS='+' read -r -a array <<< "${{ secrets.QUAY_USERNAME }}"
-          echo "${array[0]}"
           echo ::set-output name=QUAY_NS::${array[0]}
       - name: Setup
         run: sh ./contrib/ci.sh
@@ -65,7 +64,7 @@ jobs:
             ${{ secrets.DOCKER_USERNAME }}/faas-swarm:${{ github.sha }}
             ${{ secrets.DOCKER_USERNAME }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}
             ${{ secrets.DOCKER_USERNAME }}/faas-swarm:latest
-            quay.io//${{ steps.get_quay_ns.outputs.QUAY_NS }}/faas-swarm:${{ github.sha }}
+            quay.io/${{ steps.get_quay_ns.outputs.QUAY_NS }}/faas-swarm:${{ github.sha }}
             quay.io/${{ steps.get_quay_ns.outputs.QUAY_NS }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}
             quay.io/${{ steps.get_quay_ns.outputs.QUAY_NS }}/faas-swarm:latest
             ghcr.io/${{ secrets.GH_USERNAME }}/faas-swarm:${{ github.sha }}
