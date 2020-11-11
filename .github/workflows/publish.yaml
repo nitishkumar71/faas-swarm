@@ -27,7 +27,7 @@ jobs:
         id: get_quay_ns
         run: |
           IFS='+' read -r -a array <<< "${{ secrets.QUAY_USERNAME }}"
-          echo ::set-output name=QUAY_NS::${array[0]}
+          echo ::set-output name=QUAY_NS::${array}
       - name: Setup
         run: sh ./contrib/ci.sh
       - name: Set up Docker Buildx
