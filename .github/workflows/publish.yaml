@@ -59,9 +59,9 @@ jobs:
             ghcr.io/${{ secrets.DOCKER_USERNAME }}/faas-swarm:${{ github.sha }}
             ghcr.io/${{ secrets.DOCKER_USERNAME }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}
             ghcr.io/${{ secrets.DOCKER_USERNAME }}/faas-swarm:latest
-            quay.io/${{ steps.get_quay_ns.outputs.QUAY_NS }}/faas-swarm:${{ github.sha }}
-            quay.io/${{ steps.get_quay_ns.outputs.QUAY_NS }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}
-            quay.io/${{ steps.get_quay_ns.outputs.QUAY_NS }}/faas-swarm:latest
+            quay.io/${{ secrets.DOCKER_USERNAME }}/faas-swarm:${{ github.sha }}
+            quay.io/${{ secrets.DOCKER_USERNAME }}/faas-swarm:${{ steps.get_tag.outputs.TAG }}
+            quay.io/${{ secrets.DOCKER_USERNAME }}/faas-swarm:latest
       - name: Push containers arm64
         uses: docker/build-push-action@v2
         with:
